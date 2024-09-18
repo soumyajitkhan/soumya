@@ -199,3 +199,20 @@ white-space: nowrap;
 background: var(--color-headings);
 color: #fff;  
 }
+
+.input {
+    border-radius: 30px;
+    border: 1px solid #ccc;
+    color: var(--color-headings);
+    font-size: 2rem;
+    outline: 0;
+    padding: 1.5rem 3.5rem;
+}
+::placeholder {
+    color: #cdcbb7;
+}
+@media screen and (min-width: 1024px) {
+    .input {
+        font-size: 1.5rem;
+    }
+}
