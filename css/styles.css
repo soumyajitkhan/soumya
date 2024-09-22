@@ -13,6 +13,11 @@
     box-sizing: border-box;
 }
 
+::selection {
+    background: var(--color-primary);
+    color: #fff;
+}
+
 html {
  font-size: 62.5%;
 }
@@ -38,6 +43,7 @@ h2 {
 }
 h3 {
     font-size: 3rem;
+    font-weight: 500;
 }
 p {
 margin-top: 0;
@@ -115,7 +121,6 @@ margin-left: 10px;
  .list {
     list-style: none;
     padding-left: 0;
-    color: var(--color-headings);
  }
  .list--inline .list__item {
 display: inline-block;
@@ -124,6 +129,7 @@ margin-right: 2rem;
 .list--tick {
 list-style-image: url(../images/tick.svg);
 padding-left: 3rem;
+color: var(--color-headings);
 }
 .list--tick .list__item {
     padding-left: 0.5rem;
@@ -341,6 +347,7 @@ padding-right: 6rem;
 
  .media {
     display: flex;
+    margin-bottom: 4rem;
  }
  .media__title {
     margin-top: 0;
@@ -494,11 +501,12 @@ content: open-quote;
     }
 
     .block {
-    --padding-verticle: 6rem; 
-      padding: var(--padding-verticle) 2rem;
+    --padding-vertical: 5rem; 
+      padding: var(--padding-vertical) 2rem;
     }
     .block__header {
         text-align: center;
+        margin-bottom: 4rem;
     }
     .block__heading {
         margin-top: 0;
@@ -507,16 +515,18 @@ content: open-quote;
         background: #000;
         color: #7b858b;
     }
-    .block--dark .block__heading {
+    .block--dark h1,
+    .block--dark h2,
+    .block--dark h3 {
         color: #fff;
     }
     .block--skewed-right {
-        padding-bottom: calc(var(--padding-verticle) + 4rem);
-        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 80%);
+        padding-bottom: calc(var(--padding-vertical) + 4rem);
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 90%);
     }
     .block--skewed-left {
-        padding-bottom: calc(var(--padding-verticle) + 4rem);
-        clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 100%);
+        padding-bottom: calc(var(--padding-vertical) + 4rem);
+        clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%);
     }
     .container {
         max-width: 1140px;
@@ -575,9 +585,7 @@ content: open-quote;
     }
    }
    
-   .hero {
-    clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%);
-   }
+   
    .hero__tagline {
      font-size: 2rem;
      color: #b9c3cf;
@@ -647,4 +655,21 @@ content: open-quote;
    .feature:nth-of-type(even) .feature__content  {
     order: 2;
    }
+}
+
+.block-showcase__image > img {
+    width: 100%;
+}
+@media screen and (min-width: 768px) {
+    .block-showcase .grid {
+        grid-template-columns: 50% 50%;
+    }
+    
+    .block-showcase__image {
+        justify-self: end;
+    }
+    .block-showcase__image > img {
+        width: auto;
+        max-width: 700px;
+    }
 }
